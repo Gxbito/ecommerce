@@ -32,6 +32,10 @@ nav {
     gap: 20px;
 }
 
+.nav-list {
+    display: none;
+}
+
 .menu-options {
     position: absolute;
     width: 100%;
@@ -89,7 +93,7 @@ nav {
     transition: all 0.1s ease;
 }
 
-#cart-toggle:checked+.cart-options {
+#cart-toggle:checked+.cart {
     translate: 0px 0px;
 }
 
@@ -465,14 +469,28 @@ article {
     transition: all .5s ease;
 }
 
+.item-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+}
+
 .item-container {
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0px 13px;
+    flex-direction: column;
     gap: 15px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
 .item {
@@ -567,6 +585,23 @@ article {
     height: 35px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 100%;
+}
+
+.item-section-button {
+    border-radius: 15px;
+    background: rgba(200, 173, 127, 0.30);
+    border: none;
+    width: 160px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #F5D59D;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .contact-section {
@@ -1048,21 +1083,34 @@ article {
         border-radius: 100%;
     }
 
-    .menu-container {
+    .item-box {
+        display: flex;
         flex-direction: row;
-        gap: 150px;
-        margin-bottom: 70px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
     }
 
     .item-section {
-        flex-direction: row;
         justify-content: flex-start;
-        padding-left: 100px;
-        gap: 20px;
+        gap: 40px;
     }
 
     .item-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .items {
         margin-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: row;
+        max-width: 650px;
+        gap: 20px;
     }
 
     .filter-title {
@@ -1070,7 +1118,7 @@ article {
     }
 
     .item-filter {
-        align-items: flex-start;
+        justify-content: flex-start;
         width: 30%;
     }
 
@@ -1175,6 +1223,12 @@ article {
 
     .filter-price-container button {
         width: 95%;
+    }
+
+    .menu-container {
+        flex-direction: row;
+        gap: 150px;
+        margin-bottom: 70px;
     }
 
 }
