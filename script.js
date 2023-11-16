@@ -195,28 +195,40 @@ const itemsData = [
 const itemContainer = document.querySelector(".items");
 
 // Contenedor de categorias (por marca)
-const filterBrandContainer = document.querySelector(".filter-brand-container");
+const brandContainer = document.querySelector(".filter-brand-container");
 
 // Contenedor de categorias (por género)
-const filterGenderContainer = document.querySelector(
-  ".filter-gender-container"
-);
+const genderContainer = document.querySelector(".filter-gender-container");
 
 // Contenedor de categorias (por precio)
-const filterPriceContainer = document.querySelector(".filter-price-container");
+const priceContainer = document.querySelector(".filter-price-container");
 
 // Boton de filtrar categorias
 const filterBtn = document.querySelectorAll(".filter-button");
 
-// Contenedor del carrito
-const cartContainer = document.querySelector(".cart");
+// Boton del carrito
+const cartBtn = document.querySelector(".cart-button");
 
-// Boton para cargar mas contenido 
-const loadMoreBtn = document.querySelector(".item-section-button")
+// Contenedor del carrito
+const cartMenu = document.querySelector(".cart-container");
+
+// Boton del menu de opciones
+const listBtn = document.querySelector(".list-button");
+
+// Contenedor del menu de opciones
+const listMenu = document.querySelector(".list-container");
+
+// OVERLAY
+const overlay = document.querySelector(".overlay");
+
+// Boton para cargar mas contenido
+const loadMoreBtn = document.querySelector(".item-section-button");
+
+//
 
 // creamos el html de los items
-function createItemTemplate (item) {
-  const {Img, Nombre, Marca, Precio } = item
+function createItemTemplate(item) {
+  const { Img, Nombre, Marca, Precio } = item;
   return `
   <div class="item">
     <div class="item-img-container">
@@ -233,10 +245,10 @@ function createItemTemplate (item) {
         </div>
     </div>
 </div>
-  `
+  `;
+}
 
 // renderizamos el html que escribimos en la anterior funcion
-}
 function renderItems(itemList) {
   itemContainer.innerHTML += itemList.map(createItemTemplate).join("");
 }
@@ -245,7 +257,7 @@ function renderItems(itemList) {
 function divideItems(size) {
   const itemList = [];
 
-  for(let i = 0; i < itemsData.length; i+= size) {
+  for (let i = 0; i < itemsData.length; i += size) {
     itemList.push(itemsData.slice(i, i + size));
   }
 
@@ -254,29 +266,122 @@ function divideItems(size) {
 
 // appstate
 const appState = {
-  item: divideItems(4),
+  item: divideItems(6),
   itemIndex: 0,
-  itemLimit: divideItems(4).length,
+  itemLimit: divideItems(6).length,
   activeFilter: null,
-
 };
 
-//  Codigo para ver mas contenido 
-function loadMore () {
+//  Codigo para ver mas contenido
+function loadMore() {
   appState.itemIndex += 1;
-  renderItems(appState.item[appState.itemIndex])
+  renderItems(appState.item[appState.itemIndex]);
 
   if (appState.itemIndex === appState.itemLimit - 1) {
     loadMoreBtn.style.display = "none";
   }
 }
 
-// inicializamos lo que codeamos anteriormente
-function init () {
- renderItems(appState.item[0]);
- loadMoreBtn.addEventListener("click", loadMore)
+// cambiar el color del boton
+function changeActiveState(category) {
+  const filter = [...filterBtn];
 
+  filter.forEach((categoryBtn) => {
+    if (categoryBtn.dataset.category !== category) {
+      categoryBtn.classList.remove("active-filter");
+      return;
+    }
+
+    categoryBtn.classList.add("active-filter");
+  });
 }
 
-init()
+// esconder y mostrar el boton
+function hideBtn() {
+  loadMoreBtn.style.display = "block";
+  if (appState.activeFilter) {
+    loadMoreBtn.style.display = "none";
+  }
+}
 
+// funcion para cambiar el estado entre filtro activo o inactivo
+function changeFilterState(button) {
+  appState.activeFilter = button.dataset.category;
+  changeActiveState(appState.activeFilter);
+  hideBtn(appState.activeFilter);
+}
+
+// codigo para filtrar los items
+function renderFilteredItems() {
+  const filteredItems = itemsData.filter(
+    (item) => item.Marca === appState.activeFilter
+  );
+  renderItems(filteredItems);
+}
+
+// funcion para aplicar filtro por marca
+function applyFilter({ target }) {
+  if (!isInactiveBtn(target)) return;
+  changeFilterState(target);
+  itemContainer.innerHTML = "";
+  if (appState.activeFilter) {
+    renderFilteredItems();
+    appState.itemIndex = 0;
+    return;
+  }
+  renderItems(appState.item[0]);
+}
+
+// funcion para comprobar el estado del boton (devuelve un booleano)
+function isInactiveBtn(button) {
+  return (
+    button.classList.contains("filter-button") &&
+    !button.classList.contains("active-filter")
+  );
+}
+
+// funcion para activar el carrito al darle click
+function toggleCart() {
+  cartMenu.classList.toggle("active-menu");
+  if (listMenu.classList.contains("active-menu")) {
+    listMenu.classList.remove("active-menu");
+    return;
+  }
+  overlay.classList.toggle("active-overlay");
+}
+
+function toggleList() {
+  listMenu.classList.toggle("active-menu");
+  if (cartMenu.classList.contains("active-menu")) {
+    cartMenu.classList.remove("active-menu");
+    return;
+  }
+  overlay.classList.toggle("active-overlay");
+}
+
+function closeAllMenu() {
+  cartMenu.classList.remove("active-menu");
+  listMenu.classList.remove("active-menu");
+  overlay.classList.remove("active-overlay");
+}
+
+function closeAtScroll() {
+  if (
+    !cartMenu.classList.contains("active-menu") &&
+    !listMenu.classList.contains("active-menu")
+  ) return;
+  closeAllMenu()
+}
+
+// inicializamos lo que codeamos anteriormente
+function init() {
+  renderItems(appState.item[0]);
+  loadMoreBtn.addEventListener("click", loadMore);
+  brandContainer.addEventListener("click", applyFilter);
+  cartBtn.addEventListener("click", toggleCart);
+  listBtn.addEventListener("click", toggleList);
+  overlay.addEventListener("click", closeAllMenu);
+  window.addEventListener("scroll", closeAtScroll);
+}
+
+init();

@@ -24,20 +24,44 @@
             </div>
             <div class="nav-icons-container">
                 <div class="nav-icon-cart-container">
-                    <label for="cart-toggle" class="cart-label">
+                    <div class="cart-button">
                         <img src="./imgs/Nav-cart-icon.svg" alt="">
-                    </label>
-                    <input type="checkbox" name="cart" id="cart-toggle">
-                    <div class="cart">
+                    </div>
+                    <div class="cart-container">
+                        <div class="cart-text">
+                            <h3>Your</h3>
+                            <h3>Products</h3>
+                        </div>
+                        <div class="cart">
+                            <div class="cart-item-card">
+                                <div class="card-item-img-container">
+
+                                </div>
+                                <div class="card-item-info">
+                                    <div class="card-item-text"></div>
+                                    <div class="card-item-price-container">
+                                        <div class="card-item-price"></div>
+                                        <div class="card-item-number-button">
+                                            <div class="item-number-add-button"></div>
+                                            <div class="item-number"></div>
+                                            <div class="item-number-subtract-button"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-button-container">
+                            <button class="cart-buy-button">Buy all</button>
+                            <button class="cart-clear-button">Clear all</button>
+                        </div>
                     </div>
                 </div>
                 <div class="nav-icon-menu-container">
-                    <label for="menu-toggle" class="menu-label">
+                    <div class="list-button">
                         <img src="./imgs/Nav-menu-icon.svg" alt="">
-                    </label>
-                    <input type="checkbox" name="menu" id="menu-toggle">
-                    <div class="menu-options">
-                        <ul class="menu-list">
+                    </div>
+                    <div class="list-container">
+                        <ul class="list-menu">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about-us">About us</a></li>
                             <li><a href="#benefits">Benefits</a></li>
@@ -46,6 +70,7 @@
                     </div>
                 </div>
             </div>
+            <div class="overlay"></div>
         </nav>
     </header>
     <article>
@@ -154,23 +179,24 @@
             </div>
         </section>
         <section class="item-section">
+            <h2>Products</h2>
             <div class="item-box">
                 <div class="item-filter">
                     <div class="filter-title">
                         <h3>Brand</h3>
                     </div>
                     <div class="filter-brand-container">
-                        <button class="filter-button">View all</button>
-                        <button class="filter-button" data-category="nike">Nike</button>
-                        <button class="filter-button" data-category="dc">DC</button>
-                        <button class="filter-button" data-category="adidas">Adidas</button>
-                        <button class="filter-button" data-category="puma">Puma</button>
+                        <button class="filter-button active-filter">View all</button>
+                        <button class="filter-button" data-category="Nike">Nike</button>
+                        <button class="filter-button" data-category="DC">DC</button>
+                        <button class="filter-button" data-category="Adidas">Adidas</button>
+                        <button class="filter-button" data-category="Puma">Puma</button>
                     </div>
                     <div class="filter-title">
                         <h3>Gender</h3>
                     </div>
                     <div class="filter-gender-container">
-                        <button class="filter-button">View all</button>
+                        <button class="filter-button active-filter">View all</button>
                         <button class="filter-button" data-category="male">Male</button>
                         <button class="filter-button" data-category="female">Female</button>
                     </div>
@@ -184,10 +210,11 @@
                 </div>
                 <div class="item-container">
                     <div class="items">
-                        
+
                     </div>
                     <button class="item-section-button">Load More</button>
                 </div>
+            </div>
         </section>
         <section class="contact-section">
             <div class="info-container">

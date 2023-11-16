@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/akira-expanded');
 
 * {
     margin: 0;
@@ -10,18 +11,27 @@
     --main-color: #1b1b1b;
 }
 
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 7;
+    top: 0;
+}
+
 nav {
     height: 80px;
+    width: 100%;
     background-color: var(--main-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
+    box-shadow: 0px 5px 10px #0000001e;
 }
 
 .nav-logo-container img {
     width: 35px;
-
+    position: relative;
     z-index: 5;
 }
 
@@ -36,14 +46,14 @@ nav {
     display: none;
 }
 
-.menu-options {
+.list-container {
     position: absolute;
     width: 100%;
     height: 480px;
     top: 0px;
     right: 0px;
     background-color: var(--main-color);
-    z-index: 1;
+    z-index: 2;
     translate: 0px -500px;
     transition: all .3s ease;
     display: flex;
@@ -51,19 +61,78 @@ nav {
     align-items: center;
 }
 
-.cart {
+.cart-container {
     position: absolute;
-    width: 100%;
-    height: 480px;
+    min-width: 300px;
+    max-width: 600px;
+    height: 100vh;
     top: 0px;
     right: 0px;
     background-color: var(--main-color);
-    z-index: 1;
-    translate: 0px -500px;
-    transition: all .3s ease;
+    z-index: 2;
+    translate: 500px 0px;
+    transition: all 1s ease;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 25px;
+}
+
+.cart-text h3 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Akira Expanded";
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.cart-buy-button {
+    border-radius: 5px;
+    background: rgba(200, 173, 127, 0.341);
+    border: none;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #F5D59D;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cart-clear-button {
+    border-radius: 5px;
+    border: 1px solid rgba(200, 173, 127, 0.531);
+    background-color: #00000000;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #F5D59D;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .nav-icon-cart-container input,
@@ -73,47 +142,27 @@ nav {
     height: 20px;
 }
 
-#menu-toggle:checked+.menu-options {
-    translate: 0px 0px;
-}
-
-.menu-label {
+.list-button,
+.cart-button {
     display: flex;
     cursor: pointer;
-}
-
-.menu-label img {
-    position: absolute;
+    position: relative;
     z-index: 5;
-    background-color: var(--main-color);
 }
 
-.menu-label img:active {
+
+.list-button img:active,
+.cart-button img:active {
     scale: 0.9;
     transition: all 0.1s ease;
 }
 
-#cart-toggle:checked+.cart {
+.active-menu {
     translate: 0px 0px;
-}
-
-.cart-label {
     display: flex;
-    cursor: pointer;
 }
 
-.cart-label img {
-    position: absolute;
-    z-index: 5;
-    background-color: var(--main-color);
-}
-
-.cart-label img:active {
-    scale: 0.95;
-    transition: all 0.1s ease;
-}
-
-.menu-list {
+.list-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,7 +170,11 @@ nav {
     gap: 50px;
 }
 
-.menu-list li>a {
+.list-menu li {
+    list-style: none;
+}
+
+.list-menu li>a {
     color: #ACACAC;
     font-family: Poppins;
     font-size: 20px;
@@ -129,8 +182,25 @@ nav {
     text-decoration: none;
 }
 
+.overlay {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0px 8px 0px rgba(135, 125, 30, 0.335);
+    backdrop-filter: blur(5px);
+}
+
+.active-overlay {
+    display: block;
+}
+
 article {
     background-color: var(--main-color);
+    padding-top: 100px;
 }
 
 .hero-section {
@@ -198,7 +268,7 @@ article {
     margin-top: 60px;
     color: #C8AD7F;
     text-align: center;
-    font-family: "rugen";
+    font-family: "akira-expanded";
     font-size: 34px;
     font-weight: 800;
 }
@@ -250,7 +320,7 @@ article {
 .about-title {
     color: #F4D39A;
     text-shadow: 0px 0px 30px #000;
-    font-family: "Rugen";
+    font-family: "akira-expanded";
     font-size: 32px;
     font-weight: 800;
     width: 300px;
@@ -446,6 +516,13 @@ article {
     flex-wrap: wrap;
 }
 
+.active-filter {
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(200, 173, 127, 0.50) 0%, rgba(255, 199, 104, 0.50) 100%);
+}
+
 /* Default */
 
 .filter-button {
@@ -470,11 +547,11 @@ article {
 }
 
 .item-box {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 .item-container {
@@ -534,7 +611,7 @@ article {
 
 .background-img-brand {
     text-align: center;
-    font-family: "Rugen";
+    font-family: "akira-expanded";
     font-size: 34px;
     font-weight: 800;
     color: #00000000;
@@ -832,6 +909,10 @@ article {
         gap: 100px;
     }
 
+    .nav-list li {
+        list-style: none;
+    }
+
     .nav-list li>a {
         color: #ACACAC;
         font-family: Poppins;
@@ -1092,8 +1173,16 @@ article {
     }
 
     .item-section {
-        justify-content: flex-start;
-        gap: 40px;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 100px;
+    }
+
+    .item-section h2 {
+        color: #FFF;
+        font-family: "Akira Expanded";
+        font-size: 70px;
+        font-weight: 800;
     }
 
     .item-container {
@@ -1130,13 +1219,12 @@ article {
         cursor: pointer;
     }
 
-    .filter-button:nth-child(1),
-    .filter-button:nth-child(1),
     .filter-button:nth-child(1) {
-        border: none;
+        color: #FFF;
+        font-family: "Poppins";
         font-size: 20px;
-        border-radius: 5px;
-        background: linear-gradient(180deg, rgba(200, 173, 127, 0.50) 0%, rgba(255, 199, 104, 0.50) 100%);
+        font-weight: 500;
+        text-align: center;
     }
 
     .filter-brand-container button:nth-child(2) {
@@ -1210,7 +1298,8 @@ article {
         background: rgba(200, 173, 127, 0.331);
     }
 
-    .filter-gender-container button, .filter-price-container button {
+    .filter-gender-container button,
+    .filter-price-container button {
         font-size: 20px;
         background: rgba(200, 173, 127, 0.10);
         border: none;
