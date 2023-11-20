@@ -8,7 +8,7 @@
 }
 
 :root {
-    --main-color: #1b1b1b;
+    --main-color: rgb(0, 0, 0);
 }
 
 header {
@@ -80,11 +80,31 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 70px 25px;
+    gap: 20px;
+}
+
+.cart-bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #836f4c;
+    height: 22px;
+    width: 22px;
+    border-radius: 100%;
+    position: relative;
+    right: 10px;
+    bottom: 5px;
+}
+
+.cart-bubble p {
+    font-family: poppins;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .cart-text h3 {
     color: #FFF;
-    text-align: center;
     font-family: "Akira Expanded";
     font-size: 25px;
     font-weight: 800;
@@ -96,6 +116,101 @@ nav {
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    height: 100%;
+}
+
+.cart-item-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #A69476;
+    width: 300px;
+    height: 120px;
+    padding: 10px;
+    gap: 15px;
+    border-radius: 5px;
+}
+
+.card-item-img-container {
+    width: 100px;
+    height: 100px;
+    background-color: #A69476;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.card-item-img-container img {
+    height: 170px;
+    position: absolute;
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.4));
+}
+
+.card-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 160px;
+}
+
+.card-item-text,
+.card-item-price {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.card-item-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card-item-number-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 12px;
+}
+
+.item-number-add-button,
+.item-number,
+.item-number-subtract-button {
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.item-number-add-button,
+.item-number-subtract-button {
+    background-color: #c8ad7f6c;
+    border-radius: 100%;
+    width: 23px;
+    cursor: pointer;
+}
+
+.cart-total-price-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #C8AD7F;
+    padding-top: 5px;
+}
+
+.cart-total-price-container p {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 500;
 }
 
 .cart-button-container {
@@ -160,6 +275,7 @@ nav {
 .active-menu {
     translate: 0px 0px;
     display: flex;
+    align-items: flex-start;
 }
 
 .list-menu {
@@ -248,12 +364,12 @@ article {
 }
 
 .hero-img-background-filter p:nth-child(even) {
-    color: #c8ad7f08;
+    color: #c8ad7f3b;
 }
 
 .hero-img-background-filter p:nth-child(odd) {
     color: #c8ad7f00;
-    -webkit-text-stroke: 1px #c8ad7f15;
+    -webkit-text-stroke: 1px rgba(200, 173, 127, 0.393);
     ;
 }
 
@@ -520,6 +636,7 @@ article {
     border: none;
     font-size: 20px;
     border-radius: 5px;
+    border: 1px solid red;
     background: linear-gradient(180deg, rgba(200, 173, 127, 0.50) 0%, rgba(255, 199, 104, 0.50) 100%);
 }
 
@@ -609,16 +726,6 @@ article {
     align-items: center;
 }
 
-.background-img-brand {
-    text-align: center;
-    font-family: "akira-expanded";
-    font-size: 34px;
-    font-weight: 800;
-    color: #00000000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.046);
-    height: 34px;
-}
-
 .item-info-container {
     display: flex;
     flex-direction: column;
@@ -662,7 +769,20 @@ article {
     height: 35px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 100%;
+    background-image: url(./imgs/Vector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all .1s ease-in;
 }
+
+.item-add-button:hover {
+    background-color: #b29a71;
+}
+
+.item-add-button:active {
+    background-color: #b29a7130;
+} 
 
 .item-section-button {
     border-radius: 15px;
@@ -856,7 +976,7 @@ article {
 @media (min-width: 1280px) {
 
     nav {
-        padding: 0px 100px;
+        padding: 0px 50px;
     }
 
     .nav-logo-container {
@@ -881,7 +1001,7 @@ article {
         width: 30px;
     }
 
-    .nav-icon-cart-container img {
+    .cart-button img {
         height: 30px;
         width: 30px;
     }
@@ -943,11 +1063,11 @@ article {
     }
 
     .hero-img-background-filter p:nth-child(odd) {
-        -webkit-text-stroke: 1px #c8ad7f1a;
+        -webkit-text-stroke: 1px #c8ad7f69;
     }
 
     .hero-img-background-filter p:nth-child(even) {
-        color: #c8ad7f12;
+        color: rgba(200, 173, 127, 0.224);
     }
 
     .hero-text-container {
@@ -958,10 +1078,10 @@ article {
     .hero-title {
         margin: 0px;
         padding-top: 30px;
-        font-family: "underrated";
+        font-family: "akira expanded";
         text-transform: uppercase;
         text-align: start;
-        font-size: 60px;
+        font-size: 65px;
         color: #f6f6f6dd;
         padding-right: 140px;
         line-height: 70px;
@@ -994,7 +1114,7 @@ article {
 
     .about-section {
         position: relative;
-        background-color: #1b1b1b;
+        background-color: rgb(0, 0, 0);
         box-shadow: 0px -120px 90px 0px rgba(0, 0, 0, 0.75);
     }
 
@@ -1093,7 +1213,6 @@ article {
         border: 1px solid rgb(73, 64, 47);
         box-shadow: 0px 0px 0px 0px rgba(200, 173, 127, 0.10);
         transition: all .3s ease;
-        cursor: pointer;
     }
 
     .card:hover {
@@ -1159,7 +1278,7 @@ article {
     .card-text-container span {
         width: 25px;
         height: 25px;
-        background-color: rgba(200, 173, 127, 0.04);
+        background-color: rgba(200, 173, 127, 0.235);
         ;
         border-radius: 100%;
     }
@@ -1217,6 +1336,7 @@ article {
         height: 50px;
         border-radius: 5px;
         cursor: pointer;
+        border: none;
     }
 
     .filter-button:nth-child(1) {
@@ -1232,7 +1352,6 @@ article {
         background-position: center;
         background-size: 70px;
         background-repeat: no-repeat;
-        border: none;
     }
 
     .filter-brand-container button:nth-child(2):hover {
@@ -1244,12 +1363,10 @@ article {
     }
 
     .filter-brand-container button:nth-child(3) {
-        background: rgba(200, 173, 127, 0.10);
         background-image: url(./imgs/Card-logo-DC.svg);
         background-position: center;
         background-size: 40px;
         background-repeat: no-repeat;
-        border: none;
     }
 
     .filter-brand-container button:nth-child(3):hover {
@@ -1261,12 +1378,10 @@ article {
     }
 
     .filter-brand-container button:nth-child(4) {
-        background: rgba(200, 173, 127, 0.10);
         background-image: url(./imgs/Card-logo-adidas.svg);
         background-position: center;
         background-size: 50px;
         background-repeat: no-repeat;
-        border: none;
     }
 
     .filter-brand-container button:nth-child(4):hover {
@@ -1278,12 +1393,10 @@ article {
     }
 
     .filter-brand-container button:nth-child(5) {
-        background: rgba(200, 173, 127, 0.10);
         background-image: url(./imgs/Card-logo-puma.svg);
         background-position: center;
         background-size: 45px;
         background-repeat: no-repeat;
-        border: none;
     }
 
     .filter-brand-container button:nth-child(5):hover {
@@ -1319,5 +1432,11 @@ article {
         gap: 150px;
         margin-bottom: 70px;
     }
+
+    .active-filter {
+        border: 1px solid #c8ad7f5f;
+        background-color: #c8ad7f5f;
+    }
+
 
 }

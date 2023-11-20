@@ -4,7 +4,7 @@ const itemsData = [
     Marca: "Adidas",
     Precio: 89.999,
     Img: "./imgs/adidas-shoes/Card-img-1.png",
-    Gender: "Male",
+    Id: 1,
   },
 
   {
@@ -12,7 +12,7 @@ const itemsData = [
     Marca: "Adidas",
     Precio: 85.999,
     Img: "./imgs/adidas-shoes/Card-img-2.png",
-    Gender: "Male",
+    Id: 2,
   },
 
   {
@@ -20,7 +20,7 @@ const itemsData = [
     Marca: "Adidas",
     Precio: 90.999,
     Img: "./imgs/adidas-shoes/Card-img-3.png",
-    Gender: "Female",
+    Id: 3,
   },
 
   {
@@ -28,7 +28,7 @@ const itemsData = [
     Marca: "Adidas",
     Precio: 125.999,
     Img: "./imgs/adidas-shoes/Card-img-4.png",
-    Gender: "Female",
+    Id: 4,
   },
 
   {
@@ -36,7 +36,7 @@ const itemsData = [
     Marca: "Adidas",
     Precio: 110.999,
     Img: "./imgs/adidas-shoes/Card-img-5.png",
-    Gender: "Female",
+    Id: 5,
   },
 
   {
@@ -44,7 +44,7 @@ const itemsData = [
     Marca: "Adidas",
     Precio: 109.999,
     Img: "./imgs/adidas-shoes/Card-img-6.png",
-    Gender: "Male",
+    Id: 6,
   },
 
   {
@@ -52,7 +52,7 @@ const itemsData = [
     Marca: "DC",
     Precio: 75.999,
     Img: "./imgs/dc-shoes/Card-img-1.png",
-    Gender: "Male",
+    Id: 7,
   },
 
   {
@@ -60,7 +60,7 @@ const itemsData = [
     Marca: "DC",
     Precio: 85.999,
     Img: "./imgs/dc-shoes/Card-img-2.png",
-    Gender: "Male",
+    Id: 8,
   },
 
   {
@@ -68,7 +68,7 @@ const itemsData = [
     Marca: "DC",
     Precio: 90.999,
     Img: "./imgs/dc-shoes/Card-img-3.png",
-    Gender: "Female",
+    Id: 9,
   },
 
   {
@@ -76,7 +76,7 @@ const itemsData = [
     Marca: "DC",
     Precio: 45.999,
     Img: "./imgs/dc-shoes/Card-img-4.png",
-    Gender: "Male",
+    Id: 10,
   },
 
   {
@@ -84,7 +84,7 @@ const itemsData = [
     Marca: "DC",
     Precio: 85.999,
     Img: "./imgs/dc-shoes/Card-img-5.png",
-    Gender: "Female",
+    Id: 11,
   },
 
   {
@@ -92,7 +92,7 @@ const itemsData = [
     Marca: "DC",
     Precio: 64.999,
     Img: "./imgs/dc-shoes/Card-img-6.png",
-    Gender: "Female",
+    Id: 12,
   },
 
   {
@@ -100,7 +100,7 @@ const itemsData = [
     Marca: "Nike",
     Precio: 89.999,
     Img: "./imgs/nike-shoes/Card-img-1.png",
-    Gender: "Male",
+    Id: 13,
   },
 
   {
@@ -108,7 +108,7 @@ const itemsData = [
     Marca: "Nike",
     Precio: 85.999,
     Img: "./imgs/nike-shoes/Card-img-2.png",
-    Gender: "Male",
+    Id: 14,
   },
 
   {
@@ -116,7 +116,7 @@ const itemsData = [
     Marca: "Nike",
     Precio: 90.999,
     Img: "./imgs/nike-shoes/Card-img-3.png",
-    Gender: "Male",
+    Id: 15,
   },
 
   {
@@ -124,7 +124,7 @@ const itemsData = [
     Marca: "Nike",
     Precio: 125.999,
     Img: "./imgs/nike-shoes/Card-img-4.png",
-    Gender: "Female",
+    Id: 16,
   },
 
   {
@@ -132,7 +132,7 @@ const itemsData = [
     Marca: "Nike",
     Precio: 110.999,
     Img: "./imgs/nike-shoes/Card-img-5.png",
-    Gender: "Female",
+    Id: 17,
   },
 
   {
@@ -140,7 +140,7 @@ const itemsData = [
     Marca: "Nike",
     Precio: 109.999,
     Img: "./imgs/nike-shoes/Card-img-6.png",
-    Gender: "Female",
+    Id: 18,
   },
 
   {
@@ -148,7 +148,7 @@ const itemsData = [
     Marca: "Puma",
     Precio: 59.999,
     Img: "./imgs/puma-shoes/Card-img-1.png",
-    Gender: "Male",
+    Id: 19,
   },
 
   {
@@ -156,7 +156,7 @@ const itemsData = [
     Marca: "Puma",
     Precio: 49.999,
     Img: "./imgs/puma-shoes/Card-img-2.png",
-    Gender: "Male",
+    Id: 20,
   },
 
   {
@@ -164,7 +164,7 @@ const itemsData = [
     Marca: "Puma",
     Precio: 89.999,
     Img: "./imgs/puma-shoes/Card-img-3.png",
-    Gender: "Male",
+    Id: 21,
   },
 
   {
@@ -172,7 +172,7 @@ const itemsData = [
     Marca: "Puma",
     Precio: 79.999,
     Img: "./imgs/puma-shoes/Card-img-4.png",
-    Gender: "Female",
+    Id: 22,
   },
 
   {
@@ -180,7 +180,7 @@ const itemsData = [
     Marca: "Puma",
     Precio: 95.999,
     Img: "./imgs/puma-shoes/Card-img-5.png",
-    Gender: "Female",
+    Id: 23,
   },
 
   {
@@ -188,7 +188,7 @@ const itemsData = [
     Marca: "Puma",
     Precio: 59.999,
     Img: "./imgs/puma-shoes/Card-img-1.png",
-    Gender: "Female",
+    Id: 24,
   },
 ];
 // Contenedor de productos
@@ -196,12 +196,6 @@ const itemContainer = document.querySelector(".items");
 
 // Contenedor de categorias (por marca)
 const brandContainer = document.querySelector(".filter-brand-container");
-
-// Contenedor de categorias (por género)
-const genderContainer = document.querySelector(".filter-gender-container");
-
-// Contenedor de categorias (por precio)
-const priceContainer = document.querySelector(".filter-price-container");
 
 // Boton de filtrar categorias
 const filterBtn = document.querySelectorAll(".filter-button");
@@ -224,11 +218,29 @@ const overlay = document.querySelector(".overlay");
 // Boton para cargar mas contenido
 const loadMoreBtn = document.querySelector(".item-section-button");
 
+// Burbujita del carrito (el numero que aparece justo encima del icono del carro)
+const cartBubble = document.querySelector(".cart-bubble");
+
+// Precio total de la suma de todos los items del carrito
+const total = document.querySelector(".total-price");
+
+// Boton para REALIZAR COMPRA de todos los items del carrito
+const buyBtn = document.querySelector(".cart-buy-button");
+
+// Boton para BORRAR todos los items del carrito
+const clearBtn = document.querySelector(".cart-clear-button");
+
+// Carrito del menu
+const itemsCart = document.querySelector(".cart");
+
 //
+
+// Carrito seteado
+let cart = [];
 
 // creamos el html de los items
 function createItemTemplate(item) {
-  const { Img, Nombre, Marca, Precio } = item;
+  const { Img, Nombre, Marca, Precio, Id } = item;
   return `
   <div class="item">
     <div class="item-img-container">
@@ -239,8 +251,11 @@ function createItemTemplate(item) {
         <h3 class="item-brand">${Marca}</h3>
         <div class="item-price-container">
             <h3 class="item-price">${Precio}</h3>
-            <div class="item-add-button">
-                <img src="./imgs/Vector.svg" alt="">
+            <div class="item-add-button" 
+            data-id="${Id}" 
+            data-title="${Nombre}" 
+            data-brand="${Marca}" 
+            data-price="${Precio}">
             </div>
         </div>
     </div>
@@ -291,8 +306,9 @@ function changeActiveState(category) {
       categoryBtn.classList.remove("active-filter");
       return;
     }
-
+    console.log("locura");
     categoryBtn.classList.add("active-filter");
+    console.log(categoryBtn);
   });
 }
 
@@ -350,6 +366,7 @@ function toggleCart() {
   overlay.classList.toggle("active-overlay");
 }
 
+// Abrir y cerrar el menu
 function toggleList() {
   listMenu.classList.toggle("active-menu");
   if (cartMenu.classList.contains("active-menu")) {
@@ -359,18 +376,51 @@ function toggleList() {
   overlay.classList.toggle("active-overlay");
 }
 
+// Cerrar todos los menus
 function closeAllMenu() {
   cartMenu.classList.remove("active-menu");
   listMenu.classList.remove("active-menu");
   overlay.classList.remove("active-overlay");
 }
 
+// Cerrar al scrollear
 function closeAtScroll() {
   if (
     !cartMenu.classList.contains("active-menu") &&
     !listMenu.classList.contains("active-menu")
-  ) return;
-  closeAllMenu()
+  )
+    return;
+  closeAllMenu();
+}
+
+// Codigo para hacer funcionar el carrito
+
+// funcion para hacer añadir item
+function addItem(e) {
+  if (!e.target.classList.contains("item-add-button")) return;
+  const item = e.target.dataset;
+
+  if(itemExist(item)) {
+    cart = cart.map((cartItem) => cartItem.id === item.id
+    ? {... cartItem, quantity: cartItem.quantity + 1}
+    : cartItem
+    )
+  } else {
+    createCartItem(item);
+  }
+
+  
+  console.log(cart)
+}
+
+// Funcion para crear un objeto con la info del item qu¿e se agregara al carro
+function createCartItem(item) {
+  cart = [...cart, { ...item, quantity: 1 }];
+}
+
+// Funcion para saber si el item ya existe dentro del carro
+function itemExist(item) {
+  return cart.find((product) => product.id === item.id);
 }
 
 // inicializamos lo que codeamos anteriormente
@@ -382,6 +432,7 @@ function init() {
   listBtn.addEventListener("click", toggleList);
   overlay.addEventListener("click", closeAllMenu);
   window.addEventListener("scroll", closeAtScroll);
+  itemContainer.addEventListener("click", addItem);
 }
 
 init();
