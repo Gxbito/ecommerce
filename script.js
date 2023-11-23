@@ -2,7 +2,7 @@ const itemsData = [
   {
     Nombre: "Forum 84 Low 8k",
     Marca: "Adidas",
-    Precio: 89.999,
+    Precio: 450,
     Img: "./imgs/adidas-shoes/Card-img-1.png",
     Id: 1,
   },
@@ -10,7 +10,7 @@ const itemsData = [
   {
     Nombre: "Stan Smith Recon",
     Marca: "Adidas",
-    Precio: 85.999,
+    Precio: 850,
     Img: "./imgs/adidas-shoes/Card-img-2.png",
     Id: 2,
   },
@@ -18,7 +18,7 @@ const itemsData = [
   {
     Nombre: "Adizero Adios Pro 3.0",
     Marca: "Adidas",
-    Precio: 90.999,
+    Precio: 900,
     Img: "./imgs/adidas-shoes/Card-img-3.png",
     Id: 3,
   },
@@ -26,7 +26,7 @@ const itemsData = [
   {
     Nombre: "NMD_S1",
     Marca: "Adidas",
-    Precio: 125.999,
+    Precio: 125,
     Img: "./imgs/adidas-shoes/Card-img-4.png",
     Id: 4,
   },
@@ -34,7 +34,7 @@ const itemsData = [
   {
     Nombre: "Ultra Boost Light 23",
     Marca: "Adidas",
-    Precio: 110.999,
+    Precio: 110,
     Img: "./imgs/adidas-shoes/Card-img-5.png",
     Id: 5,
   },
@@ -42,7 +42,7 @@ const itemsData = [
   {
     Nombre: "Top 10 2000",
     Marca: "Adidas",
-    Precio: 109.999,
+    Precio: 105,
     Img: "./imgs/adidas-shoes/Card-img-6.png",
     Id: 6,
   },
@@ -50,7 +50,7 @@ const itemsData = [
   {
     Nombre: "Pensford SS TX",
     Marca: "DC",
-    Precio: 75.999,
+    Precio: 750,
     Img: "./imgs/dc-shoes/Card-img-1.png",
     Id: 7,
   },
@@ -58,7 +58,7 @@ const itemsData = [
   {
     Nombre: "Versatil RS",
     Marca: "DC",
-    Precio: 85.999,
+    Precio: 859,
     Img: "./imgs/dc-shoes/Card-img-2.png",
     Id: 8,
   },
@@ -66,7 +66,7 @@ const itemsData = [
   {
     Nombre: "Manteca SS",
     Marca: "DC",
-    Precio: 90.999,
+    Precio: 900,
     Img: "./imgs/dc-shoes/Card-img-3.png",
     Id: 9,
   },
@@ -74,7 +74,7 @@ const itemsData = [
   {
     Nombre: "Stag Lite",
     Marca: "DC",
-    Precio: 45.999,
+    Precio: 459,
     Img: "./imgs/dc-shoes/Card-img-4.png",
     Id: 10,
   },
@@ -82,7 +82,7 @@ const itemsData = [
   {
     Nombre: "Versatil RS 2",
     Marca: "DC",
-    Precio: 85.999,
+    Precio: 800,
     Img: "./imgs/dc-shoes/Card-img-5.png",
     Id: 11,
   },
@@ -90,7 +90,7 @@ const itemsData = [
   {
     Nombre: "Skyline Air",
     Marca: "DC",
-    Precio: 64.999,
+    Precio: 649,
     Img: "./imgs/dc-shoes/Card-img-6.png",
     Id: 12,
   },
@@ -98,7 +98,7 @@ const itemsData = [
   {
     Nombre: "G.T Cut 2",
     Marca: "Nike",
-    Precio: 89.999,
+    Precio: 899,
     Img: "./imgs/nike-shoes/Card-img-1.png",
     Id: 13,
   },
@@ -106,7 +106,7 @@ const itemsData = [
   {
     Nombre: "Jordan Stadium 90",
     Marca: "Nike",
-    Precio: 85.999,
+    Precio: 849,
     Img: "./imgs/nike-shoes/Card-img-2.png",
     Id: 14,
   },
@@ -114,7 +114,7 @@ const itemsData = [
   {
     Nombre: "Air Jordan 5 Retro SE",
     Marca: "Nike",
-    Precio: 90.999,
+    Precio: 899,
     Img: "./imgs/nike-shoes/Card-img-3.png",
     Id: 15,
   },
@@ -122,7 +122,7 @@ const itemsData = [
   {
     Nombre: "Zoom Lebron 4",
     Marca: "Nike",
-    Precio: 125.999,
+    Precio: 499,
     Img: "./imgs/nike-shoes/Card-img-4.png",
     Id: 16,
   },
@@ -130,7 +130,7 @@ const itemsData = [
   {
     Nombre: "Air Jordan 1 Mid SE",
     Marca: "Nike",
-    Precio: 110.999,
+    Precio: 699,
     Img: "./imgs/nike-shoes/Card-img-5.png",
     Id: 17,
   },
@@ -138,7 +138,7 @@ const itemsData = [
   {
     Nombre: "Air Jordan 1 Retro High",
     Marca: "Nike",
-    Precio: 109.999,
+    Precio: 200,
     Img: "./imgs/nike-shoes/Card-img-6.png",
     Id: 18,
   },
@@ -146,7 +146,7 @@ const itemsData = [
   {
     Nombre: "TRC Blaze Milksha",
     Marca: "Puma",
-    Precio: 59.999,
+    Precio: 599,
     Img: "./imgs/puma-shoes/Card-img-1.png",
     Id: 19,
   },
@@ -154,7 +154,7 @@ const itemsData = [
   {
     Nombre: "Disperse XT 2",
     Marca: "Puma",
-    Precio: 49.999,
+    Precio: 499,
     Img: "./imgs/puma-shoes/Card-img-2.png",
     Id: 20,
   },
@@ -162,7 +162,7 @@ const itemsData = [
   {
     Nombre: "Slipstream Motorsport",
     Marca: "Puma",
-    Precio: 89.999,
+    Precio: 800,
     Img: "./imgs/puma-shoes/Card-img-3.png",
     Id: 21,
   },
@@ -170,7 +170,7 @@ const itemsData = [
   {
     Nombre: "Rebound Game",
     Marca: "Puma",
-    Precio: 79.999,
+    Precio: 799,
     Img: "./imgs/puma-shoes/Card-img-4.png",
     Id: 22,
   },
@@ -178,7 +178,7 @@ const itemsData = [
   {
     Nombre: "Forever Run NITRO",
     Marca: "Puma",
-    Precio: 95.999,
+    Precio: 950,
     Img: "./imgs/puma-shoes/Card-img-5.png",
     Id: 23,
   },
@@ -186,7 +186,7 @@ const itemsData = [
   {
     Nombre: "Ferrari Electron E",
     Marca: "Puma",
-    Precio: 59.999,
+    Precio: 595,
     Img: "./imgs/puma-shoes/Card-img-1.png",
     Id: 24,
   },
@@ -250,12 +250,13 @@ function createItemTemplate(item) {
         <h3 class="item-title">${Nombre}</h3>
         <h3 class="item-brand">${Marca}</h3>
         <div class="item-price-container">
-            <h3 class="item-price">${Precio}</h3>
+            <h3 class="item-price">$${Precio}</h3>
             <div class="item-add-button" 
             data-id="${Id}" 
             data-title="${Nombre}" 
             data-brand="${Marca}" 
-            data-price="${Precio}">
+            data-price="${Precio}"
+            data-img="${Img}">
             </div>
         </div>
     </div>
@@ -393,24 +394,118 @@ function closeAtScroll() {
   closeAllMenu();
 }
 
-// Codigo para hacer funcionar el carrito
+// Template de los items dentro del carrito
+function cartItemsTemplate(item) {
+  const { brand, price, quantity, title, img, id } = item;
+  return `
+   <div class="cart-item-card">
+  <div class="card-item-img-container">
+      <img src="${img}" alt="">
+  </div>
+  <div class="card-item-info">
+      <div class="card-item-text">
+      <p>${title}</p>
+      <p>${brand}</p>
+      </div>
+      <div class="card-item-price-container">
+          <div class="card-item-price">$${price}</div>
+          <div class="card-item-number-button">
+              <div class="item-number-subtract-button" data-id="${id}">-</div>
+              <div class="item-number">${quantity}</div>
+              <div class="item-number-add-button" data-id="${id}">+</div>
+          </div>
+      </div>
+  </div>
+</div> 
+`;
+}
+
+// Codigo para render de los items en el carrito
+function renderCart() {
+  if (!cart.length) {
+    return;
+  }
+  itemsCart.innerHTML = cart.map(cartItemsTemplate).join("");
+}
+
+// funcion para OBTENER el total de todos los items del carrito
+function getCartTotalPrice() {
+  return cart.reduce(
+    (acc, item) => acc + Number(item.price) * item.quantity,
+    0
+  );
+}
+
+// Funcion para MOSTRAR el total de todos los items del carrito
+function showCartTotalPrice() {
+  total.innerHTML = `$${getCartTotalPrice()}`;
+}
+
+// Funcion para mostrar en la burbuja del icono,
+// la cantidad de productos agregados al carrito
+function renderCartBubble() {
+  cartBubble.innerHTML = cart.reduce((acc, item) => acc + item.quantity, 0);
+  console.log("lol");
+}
+
+// Funcion para inhabilitar botones cuando el carrito este vacío
+function disableCartBtn(btn) {
+  if (!cart.length) {
+    btn.classList.add("disable-button");
+  } else {
+    btn.classList.remove("disable-button");
+  }
+}
+
+// Funcion para manejar grupo de funciones y tener todo organizado
+function updateCartState() {
+  renderCart();
+  showCartTotalPrice();
+  renderCartBubble();
+  disableCartBtn(buyBtn);
+  disableCartBtn(clearBtn);
+  handleQuantityItem();
+}
 
 // funcion para hacer añadir item
 function addItem(e) {
   if (!e.target.classList.contains("item-add-button")) return;
   const item = e.target.dataset;
 
-  if(itemExist(item)) {
-    cart = cart.map((cartItem) => cartItem.id === item.id
-    ? {... cartItem, quantity: cartItem.quantity + 1}
-    : cartItem
-    )
+  if (itemExist(item)) {
+    addQuantityItem(item);
   } else {
     createCartItem(item);
   }
+  updateCartState();
+  console.log(cart);
+}
 
-  
-  console.log(cart)
+// Funcion para añadir una unidad al item
+function addQuantityItem(item) {
+  cart = cart.map((cartItem) =>
+    cartItem.id === item.id
+      ? { ...cartItem, quantity: cartItem.quantity + 1 }
+      : cartItem
+  );
+}
+
+// Funcion para manejar el click sobre el boton de suma (+)
+function handleAddQuantity(id) {
+  const cartProductExists = cart.find((item) => item.id === id);
+  addQuantityItem(cartProductExists);
+}
+
+// Funcion para sumar o restar un item desde del carrito con el boton
+function handleQuantityItem(e) {
+  if (e.target.classList.contains("item-number-add-button")) {
+    console.log("suma");
+    handleAddQuantity(e.target.dataset.id);
+  } else if (e.target.classList.contains("item-number-subtract-button")) {
+    console.log("resta");
+  }
+
+  updateCartState ()
 }
 
 // Funcion para crear un objeto con la info del item qu¿e se agregara al carro
@@ -433,6 +528,10 @@ function init() {
   overlay.addEventListener("click", closeAllMenu);
   window.addEventListener("scroll", closeAtScroll);
   itemContainer.addEventListener("click", addItem);
+  itemsCart.addEventListener("click", handleQuantityItem);
+  document.addEventListener("DOMContentLoaded", renderCart);
+  disableCartBtn(buyBtn);
+  disableCartBtn(clearBtn);
 }
 
 init();
