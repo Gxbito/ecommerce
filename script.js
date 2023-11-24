@@ -233,10 +233,16 @@ const clearBtn = document.querySelector(".cart-clear-button");
 // Carrito del menu
 const itemsCart = document.querySelector(".cart");
 
-//
+//Modal (mensaje que aparece abajo en la pagina)
+const modal = document.querySelector(".add-modal")
 
 // Carrito seteado
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// funcion para guardar en local storage
+function cartContentSave () {
+  localStorage.setItem("cart", JSON.stringify(cart))
+}
 
 // creamos el html de los items
 function createItemTemplate(item) {
@@ -307,9 +313,7 @@ function changeActiveState(category) {
       categoryBtn.classList.remove("active-filter");
       return;
     }
-    console.log("locura");
     categoryBtn.classList.add("active-filter");
-    console.log(categoryBtn);
   });
 }
 
@@ -422,9 +426,6 @@ function cartItemsTemplate(item) {
 
 // Codigo para render de los items en el carrito
 function renderCart() {
-  if (!cart.length) {
-    return;
-  }
   itemsCart.innerHTML = cart.map(cartItemsTemplate).join("");
 }
 
@@ -445,7 +446,6 @@ function showCartTotalPrice() {
 // la cantidad de productos agregados al carrito
 function renderCartBubble() {
   cartBubble.innerHTML = cart.reduce((acc, item) => acc + item.quantity, 0);
-  console.log("lol");
 }
 
 // Funcion para inhabilitar botones cuando el carrito este vacío
@@ -457,16 +457,6 @@ function disableCartBtn(btn) {
   }
 }
 
-// Funcion para manejar grupo de funciones y tener todo organizado
-function updateCartState() {
-  renderCart();
-  showCartTotalPrice();
-  renderCartBubble();
-  disableCartBtn(buyBtn);
-  disableCartBtn(clearBtn);
-  handleQuantityItem();
-}
-
 // funcion para hacer añadir item
 function addItem(e) {
   if (!e.target.classList.contains("item-add-button")) return;
@@ -476,9 +466,23 @@ function addItem(e) {
     addQuantityItem(item);
   } else {
     createCartItem(item);
+    successModal("Product added")
   }
   updateCartState();
-  console.log(cart);
+}
+
+// Funcion para hacer aparecer un mensaje abajo en la pagina
+function successModal (modalMsg) {
+  modal.classList.add("active-modal")
+  modal.textContent = modalMsg
+  setTimeout(() => {
+    modal.classList.remove("active-modal")
+  }, 1500);
+}
+
+// Funcion para sacar el item del carrito
+function removeItem (cartProductExists) {
+  cart = cart.filter((cartItem) => cartItem.id !== cartProductExists.id)
 }
 
 // Funcion para añadir una unidad al item
@@ -490,22 +494,66 @@ function addQuantityItem(item) {
   );
 }
 
+// Funcion para sacar una unidad al item
+function subtractQuantityItem(item) {
+  cart = cart.map((cartItem) =>
+    cartItem.id === item.id
+      ? { ...cartItem, quantity: cartItem.quantity - 1 }
+      : cartItem
+  );
+}
+
 // Funcion para manejar el click sobre el boton de suma (+)
 function handleAddQuantity(id) {
   const cartProductExists = cart.find((item) => item.id === id);
   addQuantityItem(cartProductExists);
 }
 
+// Funcion para manejar el click sobre el boton de resta (-) 
+function handleSubtractQuantity (id) {
+  const cartProductExists = cart.find((item) => item.id === id)
+  if(cartProductExists.quantity === 1) {
+    if(window.confirm("Do you want delete this product?")) {
+      removeItem(cartProductExists)
+      updateCartState()
+    }
+    return
+    
+  }
+  
+  subtractQuantityItem(cartProductExists)
+}
+
 // Funcion para sumar o restar un item desde del carrito con el boton
 function handleQuantityItem(e) {
   if (e.target.classList.contains("item-number-add-button")) {
-    console.log("suma");
     handleAddQuantity(e.target.dataset.id);
+    successModal("Product Added")
   } else if (e.target.classList.contains("item-number-subtract-button")) {
-    console.log("resta");
+    handleSubtractQuantity(e.target.dataset.id)
   }
 
   updateCartState ()
+}
+
+// Funcion para hacer funcionar los botones de borrar y comprar (como parametro recibe un mensaje)
+function btnCartAction (btnAlertMessage, btnSuccesMessage) {
+  if(!cart.length) return;
+  if(window.confirm(`${btnAlertMessage}`)) {
+    cart = []
+    updateCartState()
+    alert(`${btnSuccesMessage}`)
+  }
+}
+
+// Funcion para comprar todos los items del carrito con un boton 
+function buyCartItems () {
+  btnCartAction("Do you want to buy all products?", "Buy succes!")
+}
+
+// Funcion para borrar todos los items del carrito con un boton 
+function clearCartItems () {
+  btnCartAction("Do you want to clear all the cart?", "You deleted all the products from the cart")
 }
 
 // Funcion para crear un objeto con la info del item qu¿e se agregara al carro
@@ -516,6 +564,16 @@ function createCartItem(item) {
 // Funcion para saber si el item ya existe dentro del carro
 function itemExist(item) {
   return cart.find((product) => product.id === item.id);
+}
+
+// Funcion para manejar grupo de funciones y tener todo organizado
+function updateCartState() {
+  renderCart();
+  showCartTotalPrice();
+  renderCartBubble();
+  disableCartBtn(buyBtn);
+  disableCartBtn(clearBtn);
+  cartContentSave();
 }
 
 // inicializamos lo que codeamos anteriormente
@@ -530,8 +588,11 @@ function init() {
   itemContainer.addEventListener("click", addItem);
   itemsCart.addEventListener("click", handleQuantityItem);
   document.addEventListener("DOMContentLoaded", renderCart);
+  buyBtn.addEventListener("click", buyCartItems)
+  clearBtn.addEventListener("click", clearCartItems)
   disableCartBtn(buyBtn);
   disableCartBtn(clearBtn);
+  updateCartState()
 }
 
 init();

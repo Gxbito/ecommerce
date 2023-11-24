@@ -998,6 +998,27 @@ article {
     font-weight: 400;
 }
 
+.add-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(42, 158, 42);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+    transform: translateY(200px);
+    height: 35px;
+    font-family: "Poppins";
+    font-size: 18px;
+    z-index: 50;
+}
+
+.active-modal {
+    transform: translateY(0px);
+}
+
 @media (min-width: 1280px) {
 
     nav {
